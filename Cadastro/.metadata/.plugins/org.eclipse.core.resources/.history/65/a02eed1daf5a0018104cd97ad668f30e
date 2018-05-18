@@ -1,0 +1,21 @@
+package com.cadastro.rest.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cadastro.model.Funcionario;
+
+import com.cadastro.repository.FuncionarioRepository;;
+
+@RestController
+public class FuncionarioRestController {
+
+	public boolean criar(Funcionario funcionario) 
+	{
+		Funcionario funcionarioSalvar = new Funcionario();
+		
+		funcionarioSalvar = funcionario;
+		
+		
+		return true;
+	};
+}

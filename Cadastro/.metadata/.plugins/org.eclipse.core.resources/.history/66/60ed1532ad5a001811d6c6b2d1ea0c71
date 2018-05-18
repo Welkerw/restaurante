@@ -1,0 +1,5 @@
+package com.cadastro.services.copy;
+
+public class ProdutoService {
+
+}

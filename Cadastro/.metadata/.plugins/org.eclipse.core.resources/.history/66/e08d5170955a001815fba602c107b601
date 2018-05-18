@@ -1,0 +1,10 @@
+package com.cadastro.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cadastro.model.Ingrediente;
+
+public interface IngredienteRepository extends CrudRepository<Ingrediente, Long>
+{
+
+}

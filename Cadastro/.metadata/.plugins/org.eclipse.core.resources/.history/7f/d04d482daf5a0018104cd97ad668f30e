@@ -1,0 +1,25 @@
+package com.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cadastro.model.Cliente;
+
+public interface ClienteRepository extends CrudRepository<Cliente, Long>
+{
+	public Cliente findByNomeIgnoreCase(String nome);
+	
+	public Optional<Cliente> findById(Long id);
+	
+	public Cliente save(Cliente cliente);
+	
+	public void delete(Cliente cliente);
+	
+	public void deleteById(Long id);
+	
+	public List<Cliente> findAll();
+	
+	public Cliente findByTelefone(String numero);
+}

@@ -1,0 +1,5 @@
+package com.cadastro.service.services.impl;
+
+public class ProdutoServiceImpl {
+
+}

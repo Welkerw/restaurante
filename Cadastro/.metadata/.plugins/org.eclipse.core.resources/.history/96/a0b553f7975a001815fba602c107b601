@@ -1,0 +1,15 @@
+package com.cadastro.repository;
+
+import javax.transaction.Transactional;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cadastro.model.Produto;
+
+@Transactional
+public interface ProdutoRepository extends CrudRepository<Produto, Long>
+{
+	public Produto findByNameIgnoreCase(String name);
+	
+	public Produto findOne(long id);
+}

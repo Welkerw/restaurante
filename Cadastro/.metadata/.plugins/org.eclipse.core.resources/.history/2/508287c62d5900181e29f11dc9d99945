@@ -1,0 +1,9 @@
+package com.cadastro.model;
+
+import javax.persistence.Entity;
+
+@Entity
+@Table(name="funcionario")
+public class Funcionario {
+
+}

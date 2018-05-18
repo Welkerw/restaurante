@@ -1,0 +1,5 @@
+package com.cadastro.repository;
+
+public interface ClienteRepository extends CrudRepository<Cliente, Long>{
+
+}

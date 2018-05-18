@@ -1,0 +1,40 @@
+1526474397521	Rename package 'com.cadastro.controller'
+1526474437359	Delete element
+1526565128074	Encapsulate field 'salary'
+1526565133345	Encapsulate field 'function'
+1526565140046	Encapsulate field 'name'
+1526576665913	Copy compilation unit
+1526576711252	Copy compilation unit
+1526576753277	Copy compilation unit
+1526576781183	Copy compilation unit
+1526653721942	Rename package 'com.cadastro.controller'
+1526653740799	Rename type 'CadastroController'
+1526653753484	Rename type 'ClienteController'
+1526653763136	Rename type 'EnderecoController'
+1526653777082	Rename type 'FuncionarioController'
+1526653787302	Rename type 'IngredienteController'
+1526653801714	Rename type 'ProdutoController'
+1526654862777	Rename type 'FuncionarioService'
+1526655543656	Rename package 'com.cadastro.service.impl'
+1526655849555	Delete element
+1526655873125	Rename package 'com.cadastro.services'
+1526655919799	Delete element
+1526656003994	Rename package 'com.cadastro.service.impl'
+1526656048642	Copy package
+1526656055114	Delete element
+1526656095283	Delete element
+1526656120826	Rename package 'com.cadastro.service.service.impl'
+1526656159782	Copy package
+1526656164835	Delete element
+1526656205644	Delete element
+1526656211338	Delete element
+1526656292451	Rename package 'com.cadastro.serviceImpl'
+1526656350903	Move package
+1526656573596	Move package
+1526656599650	Move folder
+1526656696386	Copy package
+1526656700975	Delete element
+1526656714057	Move package
+1526656750756	Move folder
+1526656792553	Move packages
+1526656810497	Move folders

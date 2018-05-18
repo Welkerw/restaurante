@@ -1,0 +1,11 @@
+package com.cadastro.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cadastro.model.Endereco;
+import com.cadastro.model.Funcionario;
+
+public interface EnderecoRepository extends CrudRepository<Endereco, Long>
+{
+	public Endereco findByName(String name);
+}

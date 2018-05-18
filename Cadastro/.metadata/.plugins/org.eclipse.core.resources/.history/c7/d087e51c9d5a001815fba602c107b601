@@ -1,0 +1,10 @@
+package com.cadastro.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cadastro.model.Endereco;
+
+public interface EnderecoRepository extends CrudRepository<Endereco, Long>
+{
+	public Endereco findByClienteId(Long clienteId);
+}

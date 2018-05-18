@@ -1,0 +1,12 @@
+package com.cadastro.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.cadastro.model.Funcionario;
+
+public interface FuncionarioRepository extends CrudRepository<Funcionario, Long>
+{
+	public Funcionario findByNameIgnoreCase(String name);
+	
+	public Funcionario findOne(Long id);
+}

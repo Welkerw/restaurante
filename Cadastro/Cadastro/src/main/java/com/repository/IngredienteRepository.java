@@ -1,0 +1,23 @@
+package com.repository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.model.Ingrediente;
+
+public interface IngredienteRepository extends CrudRepository<Ingrediente, Long>
+{
+	public Ingrediente findByNomeIgnoreCase(String nome);
+	
+	public Optional<Ingrediente> findById(Long id);
+	
+	public Ingrediente save(Ingrediente ingrediente);
+	
+	public void delete(Ingrediente ingrediente);
+	
+	public void deleteById(Long id);
+	
+	public List<Ingrediente> findAll();
+}

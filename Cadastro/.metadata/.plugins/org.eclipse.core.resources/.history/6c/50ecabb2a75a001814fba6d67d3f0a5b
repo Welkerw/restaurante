@@ -1,0 +1,25 @@
+package com.cadastro.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cadastro.model.Funcionario;
+
+import com.cadastro.repository.FuncionarioRepository;;
+
+@RestController
+public class FuncionarioController {
+
+	public boolean criar(Funcionario funcionario) 
+	{
+		Funcionario funcionarioSalvar = new Funcionario();
+		
+		funcionarioSalvar.setFuncao(funcionario.getFuncao());
+		funcionarioSalvar.setId(funcionario.getId());
+		funcionarioSalvar.setNome(funcionario.getNome());
+		funcionarioSalvar.setSalario(funcionario.getSalario());
+		funcionarioSalvar.setTelefone(funcionario.getTelefone());
+		
+		
+		return true;
+	};
+}
