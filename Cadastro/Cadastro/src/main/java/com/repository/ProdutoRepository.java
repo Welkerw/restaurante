@@ -12,6 +12,7 @@ import com.model.Produto;
 @Transactional
 public interface ProdutoRepository extends CrudRepository<Produto, Long>
 {
+	
 	public Produto findByNomeIgnoreCase(String nome);
 	
 	public Optional<Produto> findById(Long id);
@@ -23,4 +24,5 @@ public interface ProdutoRepository extends CrudRepository<Produto, Long>
 	public void delete(Produto produto);
 	
 	public List<Produto> findAll();
+	
 }
