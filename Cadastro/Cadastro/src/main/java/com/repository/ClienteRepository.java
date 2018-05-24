@@ -22,4 +22,5 @@ public interface ClienteRepository extends CrudRepository<Cliente, Long>
 	public List<Cliente> findAll();
 	
 	public Cliente findByTelefone(String numero);
+	
 }
