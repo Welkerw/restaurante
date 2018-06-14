@@ -1,8 +1,9 @@
-package com.rest.controller;
+package com.cadastro.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class IngredienteRestController {
-
+public class CadastroRestController {
+	
+	
 }

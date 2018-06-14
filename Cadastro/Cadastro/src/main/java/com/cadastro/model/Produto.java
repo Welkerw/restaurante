@@ -1,4 +1,4 @@
-package com.model;
+package com.cadastro.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,25 +11,23 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="endereco")
-public class Endereco {
+@Table(name="produto")
+public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@Column
-	private Long clienteId;
+	@Column(name="name")
+	private String nome;
 	
 	@Column
-	private String logradouro;
+	private int quantidade;
 
 	@Column
-	private int numero;
+	private double valor;
 	
 	@Column
-	private String cep;
+	private int tipoUnitario;
 	
-	@Column
-	private String referencia;
 }

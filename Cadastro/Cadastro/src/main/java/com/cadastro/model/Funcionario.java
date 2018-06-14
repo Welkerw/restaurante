@@ -1,4 +1,4 @@
-package com.model;
+package com.cadastro.model;
 
 import javax.persistence.*;
 

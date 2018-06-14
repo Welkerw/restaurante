@@ -1,4 +1,4 @@
-package com.model;
+package com.cadastro.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,13 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name="ingrediente")
-public class Ingrediente {
+@Table(name="cliente")
+public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,14 +21,12 @@ public class Ingrediente {
 	
 	@Column(name="name")
 	private String nome;
-	
-	@Column
-	private int quantidade;
 
 	@Column
-	private double valor;
+	private String telefone;
 	
-	@Column
-	private int tipoUnitario;
+	@Transient
+	private Endereco endereco;
+	
 
 }

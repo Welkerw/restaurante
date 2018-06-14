@@ -1,4 +1,4 @@
-package com.model;
+package com.cadastro.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,9 +11,9 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="produto")
-public class Produto {
-
+@Table(name="ingrediente")
+public class Ingrediente {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -29,5 +29,5 @@ public class Produto {
 	
 	@Column
 	private int tipoUnitario;
-	
+
 }
