@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.cadastro.model.Cliente;
 import com.cadastro.repository.ClienteRepository;
@@ -50,22 +46,22 @@ public class ClienteRestController {
 		Cliente cliente = clienteRepository.findById(id).get();
 		return  ResponseEntity.ok(cliente);
 	}
-	
+
 	@RequestMapping(path= "/excluir", method = RequestMethod.DELETE)
 	public ResponseEntity<Boolean> excluir(@RequestBody Cliente cliente) {
 		clienteRepository.delete(cliente);
 		return  ResponseEntity.ok(Boolean.TRUE);
 	}
-	
+
 	@RequestMapping(path= "/excluirPeloId", method = RequestMethod.DELETE)
-	public ResponseEntity<Boolean> excluirPeloId(@RequestAttribute Long id) {
+	public ResponseEntity<HttpStatus> excluirPeloId(@RequestParam Long id) {
 		try {
 			clienteRepository.deleteById(id);
 		}
 		catch (Exception e) {
-			return  (ResponseEntity<Boolean>) ResponseEntity.notFound();
+			return ResponseEntity.ok(HttpStatus.NOT_FOUND);
 		}
-		return  ResponseEntity.ok(Boolean.TRUE);
+		return  ResponseEntity.ok(HttpStatus.OK);
 	}
 	
 	@RequestMapping(path= "/buscarTodos", method = RequestMethod.GET)

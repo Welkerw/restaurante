@@ -17,6 +17,7 @@ import com.cadastro.repository.FuncionarioRepository;
 import com.cadastro.service.FuncionarioService;;
 
 @RestController
+@RequestMapping(path= "/funcionario")
 public class FuncionarioRestController {
 
 	@Autowired
