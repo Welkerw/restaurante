@@ -16,6 +16,7 @@ import com.cadastro.repository.ProdutoRepository;
 import com.cadastro.service.ProdutoService;
 
 @RestController
+@RequestMapping(path= "/produto")
 public class ProdutoRestController {
 
 	@Autowired
