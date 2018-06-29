@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-md-7">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Estoque</h4>
+        </div>
+        <div class="content">
+          <form method="post"  #frm="ngForm" (ngSubmit)="criar(frm)">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Lojas: </label>
+                  <select id="lojas" #Id="ngModel" class=" form-control" [(ngModel)]="loja" name="lojas">  
+                    <option selected="" value=""></option>  
+                      <option [ngValue]="loja" *ngFor="let l of lojas">  
+                        {{l.nome}}
+                    </option>
+                  </select>  
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label for="produto">Produto</label>
+                  <input type="text" id="produto" name="produto"
+                    class="form-control border-input" placeholder="Nome" 
+                    [(ngModel)]="estoque.produto.descricao">
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="form-group">
+                  <label for="quantidade">Quantidade</label>
+                  <input type="text" id="quantidade" name="quantidade"
+                    class="form-control border-input" placeholder="quantidade" 
+                    [(ngModel)]="estoque.quantidade">
+                </div>
+              </div>
+              <div class="col-md-1">
+                <div class="form-group">
+                  <label for="unidade">Unidade</label>
+                  <input type="text" id="unidade" name="unidade"
+                    class="form-control border-input" placeholder="unidade" 
+                    [(ngModel)]="estoque.quantidade">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-1" style="padding-left: 2em">
+                <button [disabled]="frm.invalid" type="submit" class="btn btn-info btn-fill btn-wd">Criar</button>
+              </div>
+            </div>
+          </form>
+
+            
+            <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

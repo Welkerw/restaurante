@@ -13,7 +13,7 @@ import com.cadastro.repository.EnderecoRepository;
 import com.cadastro.service.EnderecoService;
 
 @RestController
-@RequestMapping(path= "/endereco")
+@RequestMapping(path= "/enderecos")
 public class EnderecoRestController {
 
 	@Autowired

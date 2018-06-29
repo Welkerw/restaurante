@@ -4,16 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import com.cadastro.model.Cliente;
 import com.cadastro.repository.ClienteRepository;
 import com.cadastro.service.ClienteService;
 
 @RestController
-@RequestMapping(path= "/cliente")
+@RequestMapping(path= "/clientes")
 public class ClienteRestController {
 
 	@Autowired
@@ -22,11 +24,22 @@ public class ClienteRestController {
 	@Autowired
 	ClienteRepository  clienteRepository;
 	
-	@RequestMapping(path= "/criar", method = RequestMethod.POST)
-	public ResponseEntity<Cliente> criar(@RequestBody Cliente cliente) {
-		clienteRepository.save(cliente);
-		return ResponseEntity.ok(cliente);
-	}
+	//-------------------Criar Funcionário--------------------------------------------------------
+    @RequestMapping(value = "/", method = RequestMethod.POST)
+    public ResponseEntity<Void> criar(@RequestBody Cliente cliente, UriComponentsBuilder ucBuilder) {
+        System.out.println("Criando cliente " + cliente.getNome());
+ 
+        if (clienteService.existeCliente(cliente)) {
+            System.out.println("Já existe um cliente de nome:  " + cliente.getNome());
+            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+        }
+ 
+        clienteRepository.save(cliente);
+ 
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/clientes/{id}").buildAndExpand(cliente.getId()).toUri());
+        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+    }
 	
 	@RequestMapping(path= "/alterar", method = RequestMethod.PUT)
 	public ResponseEntity<Cliente> alterar(@RequestBody Cliente cliente) {
